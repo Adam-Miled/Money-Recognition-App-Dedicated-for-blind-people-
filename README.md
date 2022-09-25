@@ -1,6 +1,6 @@
-# bd_voice_recog
+# sanad
 
-A new Flutter project.
+Sanad application
 
 ## Getting Started
 

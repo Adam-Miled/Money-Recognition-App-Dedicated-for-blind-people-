@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.bd_voice_recog">
+    package="com.example.sanad">
    <application
-        android:label="bd_voice_recog"
+        android:label="sanad"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

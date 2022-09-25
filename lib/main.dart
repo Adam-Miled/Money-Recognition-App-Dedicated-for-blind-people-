@@ -1,15 +1,15 @@
-import 'package:avatar_glow/avatar_glow.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:highlight_text/highlight_text.dart';
-import 'package:speech_to_text/speech_to_text.dart' as stt;
-
+import 'package:sanad/home.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:sanad/welcome.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -17,17 +17,37 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
+        // This is the theme of your application.
+        //
+        // Try running your application with "flutter run". You'll see the
+        // application has a blue toolbar. Then, without quitting the app, try
+        // changing the primarySwatch below to Colors.green and then invoke
+        // "hot reload" (press "r" in the console where you ran "flutter run",
+        // or simply save your changes to "hot reload" in a Flutter IDE).
+        // Notice that the counter didn't reset back to zero; the application
+        // is not restarted.
+        fontFamily: 'Fredoka',
         primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-
       ),
-      home: SpeechScreen()
+      home: AnimatedSplashScreen(
+        duration: 2000,
+        splash: Image.asset(
+          'assets/images/splash.png',
+          height: double.infinity,
+          width: double.infinity,
+          fit: BoxFit.cover,
+          alignment: Alignment.center,
+        ),
+
+        nextScreen: WelcomePage(title: 'Sanad'),
+        splashIconSize: double.infinity,
+        splashTransition: SplashTransition.fadeTransition,
+        pageTransitionType: PageTransitionType.fade,
+      ),
+
+
+
     );
   }
 }
 
-class SpeechScreen extends StatefulWidget {
-final Map<String,HighlightedWord> _highlights={} ;
-
-}

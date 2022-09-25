@@ -1,5 +1,5 @@
-name: bd_voice_recog
-description: A new Flutter project.
+name: sanad
+description: Sanad application
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.11.1 <3.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -34,13 +34,15 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-
-#recording words :
-speech_to_text: ^4.2.0
-highlight_text: ^1.0.0
-#floating action button effect
-
-avatar_glow : ^2.0.1
+  animated_splash_screen: ^1.2.0
+  hexcolor: ^2.0.6
+  camera: ^0.9.4+18
+  audioplayers: ^0.20.1
+  assets_audio_player: ^3.0.4+1
+  tflite_flutter: ^0.9.0
+  tflite_flutter_helper: ^0.3.1
+  shared_preferences: ^2.0.13
+  tflite: ^1.1.2
 
 dev_dependencies:
   flutter_test:
@@ -65,8 +67,19 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    #img
+    - assets/images/
+    - assets/flags/
+    - assets/characters/
+    #audio
+    - assets/audio/
+    - assets/audio/nour/
+    - assets/audio/karim/
+    - assets/audio/alain/
+    - assets/audio/estelle/
+    #models
+    - assets/models/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -80,17 +93,15 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+  fonts:
+    - family: Fredoka
+      fonts:
+        - asset: fonts/Fredoka/Fredoka-Regular.ttf
+        - asset: fonts/Fredoka/Fredoka-Bold.ttf
+        - asset: fonts/Fredoka/Fredoka-Light.ttf
+        - asset: fonts/Fredoka/Fredoka-Medium.ttf
+        - asset: fonts/Fredoka/Fredoka-SemiBold.ttf
+
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
